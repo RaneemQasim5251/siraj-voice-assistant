@@ -1,0 +1,48 @@
+{
+  "stations": [
+    {
+      "id": 1,
+      "name": "محطة الملك عبد العزيز",
+      "name_en": "King Abdulaziz Station",
+      "location": {
+        "lat": 24.6408,
+        "lon": 46.7127
+      },
+      "lines": ["Blue", "Red"],
+      "facilities": ["parking", "ticket_office", "restrooms", "accessibility"],
+      "connections": [2, 3],
+      "description": "محطة رئيسية في وسط الرياض",
+      "description_en": "Main station in central Riyadh"
+    },
+    {
+      "id": 2,
+      "name": "محطة العليا",
+      "name_en": "Olaya Station",
+      "location": {
+        "lat": 24.6998,
+        "lon": 46.6841
+      },
+      "lines": ["Blue"],
+      "facilities": ["ticket_office", "restrooms"],
+      "connections": [1, 4],
+      "description": "محطة في حي العليا",
+      "description_en": "Station in Olaya district"
+    }
+  ],
+  "lines": [
+    {
+      "id": "Blue",
+      "name": "الخط الأزرق",
+      "name_en": "Blue Line",
+      "stations": [1, 2],
+      "color": "#0000FF"
+    },
+    {
+      "id": "Red",
+      "name": "الخط الأحمر",
+      "name_en": "Red Line",
+      "stations": [1],
+      "color": "#FF0000"
+    }
+  ]
+} 

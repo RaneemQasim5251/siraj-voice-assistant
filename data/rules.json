@@ -1,0 +1,40 @@
+{
+  "rules": [
+    {
+      "title": "قواعد السلامة",
+      "title_en": "Safety Rules",
+      "rules": [
+        {
+          "id": 1,
+          "rule": "يجب البقاء خلف الخط الأصفر على الرصيف",
+          "rule_en": "Stay behind the yellow line on the platform",
+          "category": "platform"
+        },
+        {
+          "id": 2,
+          "rule": "لا تحاول الصعود أو النزول عندما تكون الأبواب في حالة إغلاق",
+          "rule_en": "Do not attempt to board or alight when doors are closing",
+          "category": "boarding"
+        }
+      ]
+    },
+    {
+      "title": "قواعد السلوك",
+      "title_en": "Conduct Rules",
+      "rules": [
+        {
+          "id": 3,
+          "rule": "يمنع التدخين في جميع مناطق المترو",
+          "rule_en": "Smoking is prohibited in all metro areas",
+          "category": "behavior"
+        },
+        {
+          "id": 4,
+          "rule": "يجب الحفاظ على نظافة المترو والمحطات",
+          "rule_en": "Keep the metro and stations clean",
+          "category": "cleanliness"
+        }
+      ]
+    }
+  ]
+} 

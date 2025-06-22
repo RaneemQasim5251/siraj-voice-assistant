@@ -1,0 +1,25 @@
+{
+  "faqs": [
+    {
+      "question": "كيف يمكنني شراء تذكرة؟",
+      "question_en": "How can I buy a ticket?",
+      "answer": "يمكنك شراء التذاكر من مكاتب التذاكر في المحطات أو عبر تطبيق الهاتف المحمول.",
+      "answer_en": "You can buy tickets from ticket offices at stations or through the mobile app.",
+      "category": "tickets"
+    },
+    {
+      "question": "ما هي ساعات عمل المترو؟",
+      "question_en": "What are the metro operating hours?",
+      "answer": "يعمل المترو من الساعة 6 صباحاً حتى 12 منتصف الليل.",
+      "answer_en": "The metro operates from 6 AM to 12 midnight.",
+      "category": "general"
+    },
+    {
+      "question": "هل هناك مواقف سيارات في المحطات؟",
+      "question_en": "Are there parking facilities at stations?",
+      "answer": "نعم، تتوفر مواقف سيارات في معظم المحطات الرئيسية.",
+      "answer_en": "Yes, parking facilities are available at most major stations.",
+      "category": "facilities"
+    }
+  ]
+} 

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سِراج - المساعد الذكي للمترو</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap');
+        
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%);
+            min-height: 100vh;
+            color: white;
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        .button-hover:hover {
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="p-4">
+    <div class="container mx-auto max-w-full h-screen flex flex-col">
+        <!-- Header -->
+        <header class="text-center mb-2 pt-2">
+            <h1 class="text-3xl font-bold mb-1">🚊 سِراج</h1>
+            <p class="text-lg opacity-90">مساعدك الذكي في مترو الرياض</p>
+        </header>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-4">
+            <!-- Video Display - Full Screen -->
+            <div class="relative mb-4 rounded-2xl overflow-hidden bg-black" style="height: 75vh;">
+                <div id="videoFeed" class="w-full h-full">
+                    <!-- Video feed will be inserted here -->
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="text-6xl pulse-animation">🚊</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Compact Controls -->
+            <div class="grid grid-cols-4 gap-2 mb-2">
+                <button class="glass-effect p-2 rounded-lg text-center button-hover text-sm">
+                    <span class="text-lg block mb-1">🗺️</span>
+                    خريطة
+                </button>
+                <button class="glass-effect p-2 rounded-lg text-center button-hover text-sm">
+                    <span class="text-lg block mb-1">🚊</span>
+                    صوت
+                </button>
+                <button class="glass-effect p-2 rounded-lg text-center button-hover text-sm">
+                    <span class="text-lg block mb-1">🔄</span>
+                    إعادة
+                </button>
+                <button class="glass-effect p-2 rounded-lg text-center button-hover text-sm">
+                    <span class="text-lg block mb-1">🚪</span>
+                    خروج
+                </button>
+            </div>
+        </main>
+
+        <!-- Voice Feedback - Compact -->
+        <div class="glass-effect p-3 rounded-xl text-center mx-4 mb-2">
+            <p id="voiceFeedback" class="text-lg">
+                مرحباً بك! أنا سِراج، كيف يمكنني مساعدتك؟
+            </p>
+        </div>
+
+        <!-- Status Bar - Compact -->
+        <div class="flex justify-between items-center glass-effect p-2 rounded-lg mx-4 mb-4 text-sm">
+            <span id="faceStatus" class="flex items-center">
+                <span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                جاهز
+            </span>
+            <span id="systemStatus">نشط ✨</span>
+        </div>
+
+        <!-- Map Section (Initially Hidden) -->
+        <div id="mapSection" class="glass-effect p-4 rounded-xl mb-4 mx-4 hidden">
+            <div id="map" class="h-60 rounded-lg"></div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script>
+        const socket = io();
+        let isRecording = false;
+
+        // Connection status
+        socket.on('connect', () => {
+            updateStatus('متصل بالخادم ✅');
+        });
+
+        socket.on('disconnect', () => {
+            updateStatus('منقطع عن الخادم ❌');
+        });
+
+        // Video handling
+        socket.on('video_frame', (data) => {
+            const videoFeed = document.getElementById('videoFeed');
+            videoFeed.innerHTML = `<img src="data:image/jpeg;base64,${data.frame}" class="w-full h-full object-cover">`;
+        });
+
+        // Voice response handling
+        socket.on('voice_response', (data) => {
+            const feedback = document.getElementById('voiceFeedback');
+            feedback.textContent = data.text;
+        });
+
+        // Map update handling
+        socket.on('map_update', (data) => {
+            const mapSection = document.getElementById('mapSection');
+            mapSection.classList.remove('hidden');
+            // Update map with route data
+            updateMap(data.route);
+        });
+
+        // Button handlers
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('click', () => {
+                const action = button.textContent.trim();
+                
+                switch(action) {
+                    case 'خريطة':
+                        const mapSection = document.getElementById('mapSection');
+                        mapSection.classList.toggle('hidden');
+                        break;
+                    
+                    case 'صوت':
+                        toggleVoiceRecording();
+                        break;
+                    
+                    case 'إعادة':
+                        location.reload();
+                        break;
+                    
+                    case 'خروج':
+                        socket.disconnect();
+                        window.close();
+                        break;
+                }
+
+                // Add click effect
+                button.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    button.style.transform = 'scale(1)';
+                }, 100);
+            });
+        });
+
+        // Voice recording
+        async function toggleVoiceRecording() {
+            if (!isRecording) {
+                try {
+                    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+                    const mediaRecorder = new MediaRecorder(stream);
+                    const audioChunks = [];
+
+                    mediaRecorder.addEventListener("dataavailable", event => {
+                        audioChunks.push(event.data);
+                    });
+
+                    mediaRecorder.addEventListener("stop", () => {
+                        const audioBlob = new Blob(audioChunks);
+                        const audioUrl = URL.createObjectURL(audioBlob);
+                        const audio = new Audio(audioUrl);
+                        
+                        // Convert to text and send to server
+                        const reader = new FileReader();
+                        reader.readAsDataURL(audioBlob);
+                        reader.onloadend = () => {
+                            socket.emit('voice_input', { audio: reader.result });
+                        };
+                    });
+
+                    mediaRecorder.start();
+                    isRecording = true;
+                    updateStatus('جاري التسجيل 🎤');
+                } catch (e) {
+                    console.error(e);
+                    updateStatus('خطأ في الوصول للمايكروفون ❌');
+                }
+            } else {
+                mediaRecorder.stop();
+                isRecording = false;
+                updateStatus('تم إيقاف التسجيل ⏹️');
+            }
+        }
+
+        function updateStatus(message) {
+            const status = document.getElementById('systemStatus');
+            status.textContent = message;
+        }
+
+        // Start video on load
+        socket.emit('start_video');
+    </script>
+</body>
+</html> 

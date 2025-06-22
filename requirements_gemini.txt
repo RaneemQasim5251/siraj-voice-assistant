@@ -1,0 +1,38 @@
+# Gemini Live API Requirements
+google-genai>=0.8.0
+google-generativeai>=0.8.0
+
+# Audio processing
+pyaudio>=0.2.11
+sounddevice>=0.4.6
+scipy>=1.11.0
+librosa>=0.10.0
+soundfile>=0.12.0
+
+# GUI and visualization
+FreeSimpleGUI>=5.0.0
+opencv-python>=4.8.0
+matplotlib>=3.7.0
+geopandas>=0.14.0
+networkx>=3.1
+
+# Data processing
+pandas>=2.0.0
+numpy>=1.24.0
+fuzzywuzzy>=0.18.0
+python-levenshtein>=0.21.0
+
+# Arabic text processing
+arabic-reshaper>=3.0.0
+python-bidi>=0.4.2
+
+# Utilities
+python-dotenv>=1.0.0
+loguru>=0.7.0
+shapely>=2.0.0
+
+# Async support
+asyncio-mqtt>=0.16.0 
+
+FreeSimpleGUI>=5.0.0
+python-dotenv>=1.0.0

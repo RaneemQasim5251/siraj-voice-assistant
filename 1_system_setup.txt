@@ -1,0 +1,14 @@
+# Part 1: System Setup
+
+# Update system
+sudo apt update
+sudo apt upgrade -y
+
+# Install system packages
+sudo apt install -y python3-pip python3-venv portaudio19-dev python3-opencv
+
+# Install libraries
+sudo apt install -y libgl1-mesa-glx libglib2.0-0 libsm6 libxext6 libxrender-dev
+
+# Install audio and video
+sudo apt install -y ffmpeg pulseaudio alsa-utils python3-pyaudio 

@@ -1,0 +1,45 @@
+# Siraj Voice Assistant - Raspberry Pi 5 Installation Guide
+
+## Quick Copy Commands (One-by-One)
+
+# 1. System Updates
+sudo apt update && sudo apt upgrade -y
+
+# 2. Install System Dependencies
+sudo apt install -y python3-pip python3-venv portaudio19-dev python3-opencv libgl1-mesa-glx libglib2.0-0 libsm6 libxext6 libxrender-dev libatlas-base-dev ffmpeg
+
+# 3. Install Audio
+sudo apt install -y pulseaudio alsa-utils python3-pyaudio
+
+# 4. Create Project
+mkdir ~/siraj_assistant
+cd ~/siraj_assistant
+
+# 5. Setup Python
+python3 -m venv venv
+source venv/bin/activate
+
+# 6. Install Requirements
+pip install --upgrade pip
+pip install -r requirements_complete.txt
+pip install "numpy<1.24" opencv-python-headless
+
+# 7. Environment Setup
+echo "GEMINI_API_KEY=your_api_key_here" > .env
+
+# 8. Run Application
+python3 full_inegration.py
+
+## Common Fixes
+
+# Audio Fix
+pulseaudio --start
+
+# Camera Fix
+sudo usermod -a -G video $USER
+
+# Permission Fix
+sudo usermod -a -G audio $USER
+
+# Temperature Check
+vcgencmd measure_temp 

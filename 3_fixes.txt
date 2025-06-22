@@ -1,0 +1,22 @@
+# Part 3: Common Fixes
+
+# Fix audio issues
+pulseaudio --start
+pulseaudio --check
+
+# Fix permissions
+sudo usermod -a -G audio $USER
+sudo usermod -a -G video $USER
+
+# Test audio
+arecord -l
+aplay -l
+
+# Test camera
+v4l2-ctl --list-devices
+
+# Check temperature
+vcgencmd measure_temp
+
+# Run the application
+python3 full_inegration.py 

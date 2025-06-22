@@ -1,0 +1,17 @@
+# Part 2: Project Setup
+
+# Create project directory
+mkdir ~/siraj_assistant
+cd ~/siraj_assistant
+
+# Setup Python environment
+python3 -m venv venv
+source venv/bin/activate
+
+# Install Python packages
+pip install --upgrade pip
+pip install -r requirements_complete.txt
+pip install "numpy<1.24" opencv-python-headless
+
+# Setup environment
+echo "GEMINI_API_KEY=your_api_key_here" > .env 

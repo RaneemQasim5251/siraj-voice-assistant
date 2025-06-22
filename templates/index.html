@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سِراج - مساعد مترو الرياض المباشر</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100;200;300;400;500;600;700;800;900&display=swap');
+        * {
+            font-family: 'Noto Kufi Arabic', sans-serif;
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .recording {
+            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+            animation: recording-pulse 1s infinite;
+        }
+        @keyframes recording-pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(255, 107, 107, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 107, 107, 0); }
+        }
+        .speaking {
+            border: 3px solid #4ade80;
+            animation: speaking-glow 0.5s infinite alternate;
+        }
+        @keyframes speaking-glow {
+            from { box-shadow: 0 0 20px #4ade80; }
+            to { box-shadow: 0 0 30px #4ade80, 0 0 40px #4ade80; }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-500 to-purple-600 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <div class="max-w-4xl mx-auto">
+            <!-- Header -->
+            <div class="text-center mb-6">
+                <h1 class="text-4xl font-bold text-white mb-2">سِراج</h1>
+                <p class="text-xl text-white opacity-90">مساعدك الذكي المباشر في مترو الرياض</p>
+                <div id="connectionStatus" class="mt-2 text-sm text-white opacity-75">جارٍ الاتصال...</div>
+            </div>
+
+            <!-- Video Display -->
+            <div class="relative mb-8 rounded-2xl overflow-hidden shadow-2xl">
+                <img id="sirajVideo" class="w-full h-auto" alt="سراج" />
+                <div id="speakingIndicator" class="absolute top-4 right-4 w-4 h-4 bg-green-500 rounded-full hidden pulse-animation"></div>
+            </div>
+
+            <!-- Live Controls -->
+            <div class="glass rounded-2xl p-6 shadow-2xl mb-6">
+                <div class="text-center mb-4">
+                    <h3 class="text-xl font-semibold text-white mb-2">التحدث المباشر</h3>
+                    <p class="text-white opacity-75 text-sm">اضغط واستمر في الضغط للتحدث</p>
+                </div>
+                
+                <div class="flex items-center justify-center gap-4 mb-4">
+                    <button id="pushToTalk" class="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-full transition-all transform hover:scale-105 text-lg font-semibold">
+                        🎤 اضغط للتحدث
+                    </button>
+                    <button id="toggleContinuous" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-full transition-all">
+                        🔄 التحدث المستمر
+                    </button>
+                </div>
+
+                <div id="voiceStatus" class="text-center text-white text-sm opacity-75">
+                    جاهز للاستماع
+                </div>
+            </div>
+
+            <!-- Chat Interface -->
+            <div class="glass rounded-2xl p-6 shadow-2xl">
+                <div id="chat" class="h-64 overflow-y-auto mb-4 p-4 rounded-lg bg-white bg-opacity-10">
+                    <div class="mb-2 p-3 rounded-lg bg-white bg-opacity-20 text-white max-w-[80%]">
+                        مرحباً! أنا سِراج، مساعدك الذكي في مترو الرياض. يمكنك التحدث معي مباشرة أو كتابة رسالتك.
+                    </div>
+                </div>
+
+                <!-- Text Input -->
+                <div class="flex gap-2">
+                    <input type="text" id="messageInput" class="flex-1 px-4 py-3 rounded-lg bg-white bg-opacity-20 text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50" placeholder="اكتب رسالتك هنا...">
+                    <button id="sendMessage" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg transition-colors">
+                        إرسال
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const socket = io();
+            let mediaRecorder;
+            let audioChunks = [];
+            let isRecording = false;
+            let isContinuousMode = false;
+            let frameInterval;
+            let recognition;
+            let isConnected = false;
+
+            // Initialize Speech Recognition
+            if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+                const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+                recognition = new SpeechRecognition();
+                recognition.continuous = true;
+                recognition.interimResults = true;
+                recognition.lang = 'ar-SA';
+
+                recognition.onresult = (event) => {
+                    let finalTranscript = '';
+                    for (let i = event.resultIndex; i < event.results.length; i++) {
+                        if (event.results[i].isFinal) {
+                            finalTranscript += event.results[i][0].transcript;
+                        }
+                    }
+                    if (finalTranscript) {
+                        socket.emit('message', finalTranscript);
+                        addMessage(finalTranscript, true);
+                    }
+                };
+
+                recognition.onerror = (event) => {
+                    console.error('Speech recognition error:', event.error);
+                    updateVoiceStatus('خطأ في التعرف على الصوت');
+                };
+            }
+
+            // Socket events
+            socket.on('connect', () => {
+                console.log('Connected to server');
+                isConnected = true;
+                document.getElementById('connectionStatus').textContent = 'متصل ✅';
+                
+                if (frameInterval) {
+                    clearInterval(frameInterval);
+                }
+                frameInterval = setInterval(() => {
+                    socket.emit('start_stream');
+                }, 33); // ~30 FPS
+            });
+
+            socket.on('disconnect', () => {
+                isConnected = false;
+                document.getElementById('connectionStatus').textContent = 'منقطع ❌';
+                if (frameInterval) {
+                    clearInterval(frameInterval);
+                }
+            });
+
+            socket.on('video_frame', (data) => {
+                const video = document.getElementById('sirajVideo');
+                if (video) {
+                    video.src = `data:image/jpeg;base64,${data.frame}`;
+                }
+            });
+
+            socket.on('server_response', (data) => {
+                addMessage(data.data);
+                showSpeakingIndicator();
+            });
+
+            socket.on('voice_response', (data) => {
+                addMessage(data.text);
+                showSpeakingIndicator();
+            });
+
+            socket.on('error', (data) => {
+                addMessage(`خطأ: ${data.message}`);
+            });
+
+            // Push to talk functionality
+            const pushToTalkBtn = document.getElementById('pushToTalk');
+            
+            pushToTalkBtn.addEventListener('mousedown', startRecording);
+            pushToTalkBtn.addEventListener('mouseup', stopRecording);
+            pushToTalkBtn.addEventListener('touchstart', startRecording);
+            pushToTalkBtn.addEventListener('touchend', stopRecording);
+
+            // Continuous mode toggle
+            document.getElementById('toggleContinuous').addEventListener('click', () => {
+                isContinuousMode = !isContinuousMode;
+                const btn = document.getElementById('toggleContinuous');
+                if (isContinuousMode) {
+                    btn.textContent = '⏹️ إيقاف المستمر';
+                    btn.classList.remove('bg-blue-500', 'hover:bg-blue-600');
+                    btn.classList.add('bg-red-500', 'hover:bg-red-600');
+                    startContinuousListening();
+                } else {
+                    btn.textContent = '🔄 التحدث المستمر';
+                    btn.classList.remove('bg-red-500', 'hover:bg-red-600');
+                    btn.classList.add('bg-blue-500', 'hover:bg-blue-600');
+                    stopContinuousListening();
+                }
+            });
+
+            function startRecording() {
+                if (!isConnected || isRecording) return;
+                
+                if (recognition) {
+                    recognition.start();
+                    isRecording = true;
+                    pushToTalkBtn.classList.add('recording');
+                    pushToTalkBtn.textContent = '🔴 جارٍ التسجيل...';
+                    updateVoiceStatus('استمع...');
+                }
+            }
+
+            function stopRecording() {
+                if (!isRecording) return;
+                
+                if (recognition) {
+                    recognition.stop();
+                    isRecording = false;
+                    pushToTalkBtn.classList.remove('recording');
+                    pushToTalkBtn.textContent = '🎤 اضغط للتحدث';
+                    updateVoiceStatus('جاهز للاستماع');
+                }
+            }
+
+            function startContinuousListening() {
+                if (recognition && !isRecording) {
+                    recognition.start();
+                    updateVoiceStatus('الاستماع المستمر مفعل');
+                }
+            }
+
+            function stopContinuousListening() {
+                if (recognition && isRecording) {
+                    recognition.stop();
+                    updateVoiceStatus('جاهز للاستماع');
+                }
+            }
+
+            function updateVoiceStatus(status) {
+                document.getElementById('voiceStatus').textContent = status;
+            }
+
+            function showSpeakingIndicator() {
+                const indicator = document.getElementById('speakingIndicator');
+                const video = document.getElementById('sirajVideo');
+                
+                indicator.classList.remove('hidden');
+                video.classList.add('speaking');
+                
+                setTimeout(() => {
+                    indicator.classList.add('hidden');
+                    video.classList.remove('speaking');
+                }, 3000);
+            }
+
+            // Chat functionality
+            function addMessage(text, isUser = false) {
+                const chat = document.getElementById('chat');
+                const message = document.createElement('div');
+                message.className = `mb-2 p-3 rounded-lg ${isUser ? 'bg-blue-500 text-white mr-auto' : 'bg-white bg-opacity-20 text-white ml-auto'} max-w-[80%] animate-fade-in`;
+                message.textContent = text;
+                chat.appendChild(message);
+                chat.scrollTop = chat.scrollHeight;
+            }
+
+            document.getElementById('sendMessage').addEventListener('click', () => {
+                const input = document.getElementById('messageInput');
+                const message = input.value.trim();
+                if (message && isConnected) {
+                    socket.emit('message', message);
+                    addMessage(message, true);
+                    input.value = '';
+                }
+            });
+
+            document.getElementById('messageInput').addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    document.getElementById('sendMessage').click();
+                }
+            });
+
+            // Add CSS animation
+            const style = document.createElement('style');
+            style.textContent = `
+                .animate-fade-in {
+                    animation: fadeIn 0.3s ease-in;
+                }
+                @keyframes fadeIn {
+                    from { opacity: 0; transform: translateY(10px); }
+                    to { opacity: 1; transform: translateY(0); }
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+</body>
+</html> 

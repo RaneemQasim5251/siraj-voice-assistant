@@ -1,0 +1,6 @@
+@echo off
+echo Connecting to Raspberry Pi...
+set /p IP="Enter Raspberry Pi IP address: "
+start mstsc /v:%IP%
+echo Opening Remote Desktop Connection...
+pause 

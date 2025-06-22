@@ -1,0 +1,63 @@
+# Siraj Requirements for Raspberry Pi
+# Core AI and speech
+google-generativeai>=0.8.0
+google-genai>=0.4.0
+python-dotenv>=1.0.0
+
+# Audio processing - Pi compatible versions
+pygame>=2.5.0
+soundfile>=0.12.0
+# pyaudio requires: sudo apt install libportaudio2 libportaudio-dev
+
+# Computer vision - Pi optimized
+opencv-python>=4.8.0
+# For Pi: sudo apt install libopencv-dev python3-opencv
+numpy>=1.24.0
+
+# Data processing
+pandas>=2.0.0
+fuzzywuzzy>=0.18.0
+python-Levenshtein>=0.20.0
+
+# GUI (optional for desktop mode)
+FreeSimpleGUI>=5.0.0
+
+# Arabic text processing
+arabic-reshaper>=3.0.0
+python-bidi>=0.4.2
+
+# Raspberry Pi GPIO
+RPi.GPIO>=0.7.1
+
+# Logging and utilities
+loguru>=0.7.0
+requests>=2.31.0
+
+# Geospatial data (optional)
+geopandas>=0.14.0
+shapely>=2.0.0
+geopy>=2.4.0
+networkx>=3.1
+
+# Plotting (lightweight for Pi)
+matplotlib>=3.7.0
+
+# Object detection (optional - large download)
+# ultralytics>=8.0.0  # Uncomment if you want YOLO support
+
+# Web maps (optional)
+folium>=0.15.0
+
+# RAG System (CPU only)
+langchain>=0.1.0
+langchain-community>=0.0.20
+langchain-google-genai>=0.0.8
+faiss-cpu>=1.7.4
+
+# System dependencies for Pi:
+# sudo apt update && sudo apt install -y
+# sudo apt install python3-dev python3-pip python3-venv
+# sudo apt install libportaudio2 libportaudio-dev libasound2-dev
+# sudo apt install libopencv-dev python3-opencv
+# sudo apt install alsa-utils pulseaudio
+# sudo apt install git curl wget 

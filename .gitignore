@@ -1,0 +1,125 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv/
+.env/
+
+# Environment Variables & API Keys
+.env
+.env.*
+!.env.example
+
+# IDE & Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Audio & Video Files
+*.wav
+*.mp3
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.flv
+!siraj_silent.mp4
+!siraj_speak2.mp4
+
+# Model Files (large)
+models/
+*.pt
+*.pth
+*.h5
+*.pkl
+*.joblib
+!yolov8n.pt
+
+# Data Files (may contain sensitive info)
+data/private/
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs
+logs/
+*.log
+.loguru/
+
+# Temporary Files
+temp/
+tmp/
+*.tmp
+*.temp
+.cache/
+
+# System Files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Audio Device Cache
+.pulse/
+.alsa/
+
+# Camera & Video Cache
+.opencv_cache/
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Documentation
+docs/_build/
+site/
+
+# Large CSV Files (optional - uncomment if needed)
+# *.csv
+# data/*.csv
+!data/sample_data.csv
+
+# Backup Files
+*.bak
+*.backup
+*.orig
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
