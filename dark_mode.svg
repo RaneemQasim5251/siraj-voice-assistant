@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" font-family="ConsolasFallback,Consolas,monospace" width="985px" height="530px" font-size="16px">
+<style>
+@font-face {
+src: local('Consolas'), local('Consolas Bold');
+font-family: 'ConsolasFallback';
+font-display: swap;
+-webkit-size-adjust: 109%;
+size-adjust: 109%;
+}
+.key {fill: #D4AF37;}
+.value {fill: #a5d6ff;}
+.addColor {fill: #3fb950;}
+.delColor {fill: #f85149;}
+.cc {fill: #616e7f;}
+text, tspan {white-space: pre;}
+</style>
+<rect width="985px" height="530px" fill="#161b22" rx="15"/>
+<text x="15" y="30" fill="#c9d1d9" class="ascii">
+<tspan x="15" y="30">              ╭─────────────────────────╮</tspan>
+<tspan x="15" y="50">              │    ●   NEURAL   ●    │</tspan>
+<tspan x="15" y="70">              │   / \  NETWORK / \   │</tspan>
+<tspan x="15" y="90">              │  ●   ●    ●   ●   ●  │</tspan>
+<tspan x="15" y="110">             │ / \ / \  / \ / \ / \ │</tspan>
+<tspan x="15" y="130">             │●   ●   ●●   ●   ●   ●│</tspan>
+<tspan x="15" y="150">             │ \ / \ / \\ / \ / \ / │</tspan>
+<tspan x="15" y="170">             │  ●   ●   ●●   ●   ●  │</tspan>
+<tspan x="15" y="190">             │ / \ / \  /|\ / \ / \ │</tspan>
+<tspan x="15" y="210">             │●   ●   ● | ●   ●   ●│</tspan>
+<tspan x="15" y="230">             │ \ / \ /  |  \ / \ / │</tspan>
+<tspan x="15" y="250">             │  ●   ●   |   ●   ●  │</tspan>
+<tspan x="15" y="270">             │ / \ / \  |  / \ / \ │</tspan>
+<tspan x="15" y="290">             │●   ●   ● | ●   ●   ●│</tspan>
+<tspan x="15" y="310">             │ \ / \ /  |  \ / \ / │</tspan>
+<tspan x="15" y="330">             │  ●   ●   |   ●   ●  │</tspan>
+<tspan x="15" y="350">             │ / \ / \  |  / \ / \ │</tspan>
+<tspan x="15" y="370">             │●   ●   ● | ●   ●   ●│</tspan>
+<tspan x="15" y="390">             │ \ / \ /  |  \ / \ / │</tspan>
+<tspan x="15" y="410">             │  ●   ●   |   ●   ●  │</tspan>
+<tspan x="15" y="430">             │         /|\         │</tspan>
+<tspan x="15" y="450">             │        / | \        │</tspan>
+<tspan x="15" y="470">             │       ●  |  ●       │</tspan>
+<tspan x="15" y="490">             │      AI OUTPUT      │</tspan>
+<tspan x="15" y="510">             ╰─────────────────────────╯</tspan>
+</text>
+<text x="390" y="30" fill="#c9d1d9">
+<tspan x="390" y="30">raneem@althaqafi</tspan> -———————————————————————————————————————————-—-
+<tspan x="390" y="50" class="cc">. </tspan><tspan class="key">OS</tspan>:<tspan class="cc"> .......................... </tspan><tspan class="value">Linux, Windows, macOS</tspan>
+<tspan x="390" y="70" class="cc">. </tspan><tspan class="key">Uptime</tspan>:<tspan class="cc"> ......................... </tspan><tspan class="value">AI Engineer & Researcher</tspan>
+<tspan x="390" y="90" class="cc">. </tspan><tspan class="key">Host</tspan>:<tspan class="cc"> ............................ </tspan><tspan class="value">Riyadh, Saudi Arabia</tspan>
+<tspan x="390" y="110" class="cc">. </tspan><tspan class="key">Kernel</tspan>:<tspan class="cc"> .......................... </tspan><tspan class="value">Neural Network Architect</tspan>
+<tspan x="390" y="130" class="cc">. </tspan><tspan class="key">IDE</tspan>:<tspan class="cc"> ................ </tspan><tspan class="value">PyCharm, Jupyter, VSCode</tspan>
+<tspan x="390" y="150" class="cc">. </tspan>
+<tspan x="390" y="170" class="cc">. </tspan><tspan class="key">Languages</tspan>.<tspan class="key">Programming</tspan>:<tspan class="cc"> ......... </tspan><tspan class="value">Python, JavaScript, SQL</tspan>
+<tspan x="390" y="190" class="cc">. </tspan><tspan class="key">Languages</tspan>.<tspan class="key">ML_Frameworks</tspan>:<tspan class="cc"> .... </tspan><tspan class="value">TensorFlow, PyTorch, OpenCV</tspan>
+<tspan x="390" y="210" class="cc">. </tspan><tspan class="key">Languages</tspan>.<tspan class="key">Human</tspan>:<tspan class="cc"> .................. </tspan><tspan class="value">Arabic, English</tspan>
+<tspan x="390" y="230" class="cc">. </tspan>
+<tspan x="390" y="250" class="cc">. </tspan><tspan class="key">Achievements</tspan>.<tspan class="key">Space</tspan>:<tspan class="cc"> .......... </tspan><tspan class="value">World Champion Debris Detection</tspan>
+<tspan x="390" y="270" class="cc">. </tspan><tspan class="key">Achievements</tspan>.<tspan class="key">AI</tspan>:<tspan class="cc"> ............. </tspan><tspan class="value">Arabic Metro AI, rPPG Research</tspan>
+<tspan x="390" y="290" class="cc">. </tspan><tspan class="key">Current</tspan>.<tspan class="key">Focus</tspan>:<tspan class="cc"> ........... </tspan><tspan class="value">Vision 2030, Neural Architecture</tspan>
+<tspan x="390" y="310">- Contact</tspan> -——————————————————————————————————————————————-—-
+<tspan x="390" y="330" class="cc">. </tspan><tspan class="key">Location</tspan>:<tspan class="cc"> .......................... </tspan><tspan class="value">Riyadh, Saudi Arabia</tspan>
+<tspan x="390" y="350" class="cc">. </tspan><tspan class="key">LinkedIn</tspan>:<tspan class="cc"> ......................... </tspan><tspan class="value">raneem-althaqafi</tspan>
+<tspan x="390" y="370" class="cc">. </tspan><tspan class="key">GitHub</tspan>:<tspan class="cc"> ........................... </tspan><tspan class="value">RaneemQasim5251</tspan>
+<tspan x="390" y="390" class="cc">. </tspan><tspan class="key">Email</tspan>:<tspan class="cc"> .......................... </tspan><tspan class="value">raneem.althaqafi@gmail.com</tspan>
+<tspan x="390" y="410" class="cc">. </tspan><tspan class="key">Specialization</tspan>:<tspan class="cc"> .................. </tspan><tspan class="value">AI, ML, Computer Vision</tspan>
+<tspan x="390" y="430">- Achievements</tspan> -————————————————————————————————————————————-—-
+<tspan x="390" y="450" class="cc">. </tspan><tspan class="key">World Champion</tspan>:<tspan class="cc"> .............. </tspan><tspan class="value">Space Debris Detection (1st/495)</tspan>
+<tspan x="390" y="470" class="cc">. </tspan><tspan class="key">AI Innovation</tspan>:<tspan class="cc"> ................ </tspan><tspan class="value">Arabic Metro AI (Siraj Project)</tspan>
+<tspan x="390" y="490" class="cc">. </tspan><tspan class="key">Research</tspan>:<tspan class="cc"> ................... </tspan><tspan class="value">rPPG Heartbeat Detection (94%)</tspan>
+<tspan x="390" y="510" class="cc">. </tspan><tspan class="key">Impact</tspan>:<tspan class="cc"> ..................... </tspan><tspan class="value">Millions of users, Vision 2030</tspan>
+</text>
+</svg> 
