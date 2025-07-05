@@ -1,73 +1,68 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<svg xmlns="http://www.w3.org/2000/svg" font-family="ConsolasFallback,Consolas,monospace" width="985px" height="530px" font-size="16px">
-<style>
-@font-face {
-src: local('Consolas'), local('Consolas Bold');
-font-family: 'ConsolasFallback';
-font-display: swap;
--webkit-size-adjust: 109%;
-size-adjust: 109%;
-}
-.key {fill: #D4AF37;}
-.value {fill: #a5d6ff;}
-.addColor {fill: #3fb950;}
-.delColor {fill: #f85149;}
-.cc {fill: #616e7f;}
-text, tspan {white-space: pre;}
-</style>
-<rect width="985px" height="530px" fill="#161b22" rx="15"/>
-<text x="15" y="30" fill="#c9d1d9" class="ascii">
-<tspan x="15" y="30">              ╭─────────────────────────╮</tspan>
-<tspan x="15" y="50">              │    ●   NEURAL   ●    │</tspan>
-<tspan x="15" y="70">              │   / \  NETWORK / \   │</tspan>
-<tspan x="15" y="90">              │  ●   ●    ●   ●   ●  │</tspan>
-<tspan x="15" y="110">             │ / \ / \  / \ / \ / \ │</tspan>
-<tspan x="15" y="130">             │●   ●   ●●   ●   ●   ●│</tspan>
-<tspan x="15" y="150">             │ \ / \ / \\ / \ / \ / │</tspan>
-<tspan x="15" y="170">             │  ●   ●   ●●   ●   ●  │</tspan>
-<tspan x="15" y="190">             │ / \ / \  /|\ / \ / \ │</tspan>
-<tspan x="15" y="210">             │●   ●   ● | ●   ●   ●│</tspan>
-<tspan x="15" y="230">             │ \ / \ /  |  \ / \ / │</tspan>
-<tspan x="15" y="250">             │  ●   ●   |   ●   ●  │</tspan>
-<tspan x="15" y="270">             │ / \ / \  |  / \ / \ │</tspan>
-<tspan x="15" y="290">             │●   ●   ● | ●   ●   ●│</tspan>
-<tspan x="15" y="310">             │ \ / \ /  |  \ / \ / │</tspan>
-<tspan x="15" y="330">             │  ●   ●   |   ●   ●  │</tspan>
-<tspan x="15" y="350">             │ / \ / \  |  / \ / \ │</tspan>
-<tspan x="15" y="370">             │●   ●   ● | ●   ●   ●│</tspan>
-<tspan x="15" y="390">             │ \ / \ /  |  \ / \ / │</tspan>
-<tspan x="15" y="410">             │  ●   ●   |   ●   ●  │</tspan>
-<tspan x="15" y="430">             │         /|\         │</tspan>
-<tspan x="15" y="450">             │        / | \        │</tspan>
-<tspan x="15" y="470">             │       ●  |  ●       │</tspan>
-<tspan x="15" y="490">             │      AI OUTPUT      │</tspan>
-<tspan x="15" y="510">             ╰─────────────────────────╯</tspan>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="600" viewBox="0 0 1000 600">
+<rect width="1000" height="600" fill="#0d1117" rx="10"/>
+<rect x="0" y="0" width="1000" height="25" fill="#161b22" rx="10"/>
+<circle cx="15" cy="12" r="4" fill="#ff5f57"/>
+<circle cx="30" cy="12" r="4" fill="#ffbd2e"/>
+<circle cx="45" cy="12" r="4" fill="#28ca42"/>
+
+<text x="15" y="50" fill="#00ff00" font-family="monospace" font-size="7">
+<tspan x="15" y="50">                       .,,uod8B8bou,,.</tspan>
+<tspan x="15" y="60">              ..,uod8BBBBBBBBBBBBBBBBRPFT?l!i:.</tspan>
+<tspan x="15" y="70">         ,=m8BBBBBBBBBBBBBBBRPFT?!||||||||||||||</tspan>
+<tspan x="15" y="80">         !...:!TVBBBRPFT||||||||||!!^^""'   ||||</tspan>
+<tspan x="15" y="90">         !.......:!?|||||!!^^""'            ||||</tspan>
+<tspan x="15" y="100">         !.........||||                     ||||</tspan>
+<tspan x="15" y="110">         !.........||||  ##                 ||||</tspan>
+<tspan x="15" y="120">         !.........||||                     ||||</tspan>
+<tspan x="15" y="130">         !.........||||                     ||||</tspan>
+<tspan x="15" y="140">         !.........||||                     ||||</tspan>
+<tspan x="15" y="150">         !.........||||                     ||||</tspan>
+<tspan x="15" y="160">         `.........||||                    ,||||</tspan>
+<tspan x="15" y="170">          .;.......||||               _.-!!|||||</tspan>
+<tspan x="15" y="180">   .,uodWBBBBb.....||||       _.-!!|||||||||!:'</tspan>
+<tspan x="15" y="190">!YBBBBBBBBBBBBBBb..!|||:..-!!|||||||!iof68BBBBBb....</tspan>
+<tspan x="15" y="200">!..YBBBBBBBBBBBBBBb!!||||||||!iof68BBBBBBRPFT?!::   `.</tspan>
+<tspan x="15" y="210">!....YBBBBBBBBBBBBBBbaaitf68BBBBBBRPFT?!:::::::::     `.</tspan>
+<tspan x="15" y="220">!......YBBBBBBBBBBBBBBBBBBBRPFT?!::::::;:!^"`;:::       `.</tspan>
+<tspan x="15" y="230">!........YBBBBBBBBBBRPFT?!::::::::::^''...::::::;         iBBbo.</tspan>
+<tspan x="15" y="240">`..........YBRPFT?!::::::::::::::::::::::::;iof68bo.      WBBBBbo.</tspan>
+<tspan x="15" y="250">  `..........:::::::::::::::::::::::;iof688888888888b.     `YBBBP^'</tspan>
+<tspan x="15" y="260">    `........::::::::::::::::;iof688888888888888888888b.     `</tspan>
+<tspan x="15" y="270">      `......:::::::::;iof688888888888888888888888888888b.</tspan>
+<tspan x="15" y="280">        `....:::;iof688888888888888888888888888888888899fT!</tspan>
+<tspan x="15" y="290">          `..::!8888888888888888888888888888888899fT|!^"'</tspan>
+<tspan x="15" y="300">            `' !!988888888888888888888888899fT|!^"'</tspan>
+<tspan x="15" y="310">                `!!8888888888888888899fT|!^"'</tspan>
+<tspan x="15" y="320">                  `!988888888899fT|!^"'</tspan>
+<tspan x="15" y="330">                    `!9899fT|!^"'</tspan>
+<tspan x="15" y="340">                      `!^"'</tspan>
 </text>
-<text x="390" y="30" fill="#c9d1d9">
-<tspan x="390" y="30">raneem@althaqafi</tspan> -———————————————————————————————————————————-—-
-<tspan x="390" y="50" class="cc">. </tspan><tspan class="key">OS</tspan>:<tspan class="cc"> .......................... </tspan><tspan class="value">Linux, Windows, macOS</tspan>
-<tspan x="390" y="70" class="cc">. </tspan><tspan class="key">Uptime</tspan>:<tspan class="cc"> ......................... </tspan><tspan class="value">AI Engineer & Researcher</tspan>
-<tspan x="390" y="90" class="cc">. </tspan><tspan class="key">Host</tspan>:<tspan class="cc"> ............................ </tspan><tspan class="value">Riyadh, Saudi Arabia</tspan>
-<tspan x="390" y="110" class="cc">. </tspan><tspan class="key">Kernel</tspan>:<tspan class="cc"> .......................... </tspan><tspan class="value">Neural Network Architect</tspan>
-<tspan x="390" y="130" class="cc">. </tspan><tspan class="key">IDE</tspan>:<tspan class="cc"> ................ </tspan><tspan class="value">PyCharm, Jupyter, VSCode</tspan>
-<tspan x="390" y="150" class="cc">. </tspan>
-<tspan x="390" y="170" class="cc">. </tspan><tspan class="key">Languages</tspan>.<tspan class="key">Programming</tspan>:<tspan class="cc"> ......... </tspan><tspan class="value">Python, JavaScript, SQL</tspan>
-<tspan x="390" y="190" class="cc">. </tspan><tspan class="key">Languages</tspan>.<tspan class="key">ML_Frameworks</tspan>:<tspan class="cc"> .... </tspan><tspan class="value">TensorFlow, PyTorch, OpenCV</tspan>
-<tspan x="390" y="210" class="cc">. </tspan><tspan class="key">Languages</tspan>.<tspan class="key">Human</tspan>:<tspan class="cc"> .................. </tspan><tspan class="value">Arabic, English</tspan>
-<tspan x="390" y="230" class="cc">. </tspan>
-<tspan x="390" y="250" class="cc">. </tspan><tspan class="key">Achievements</tspan>.<tspan class="key">Space</tspan>:<tspan class="cc"> .......... </tspan><tspan class="value">World Champion Debris Detection</tspan>
-<tspan x="390" y="270" class="cc">. </tspan><tspan class="key">Achievements</tspan>.<tspan class="key">AI</tspan>:<tspan class="cc"> ............. </tspan><tspan class="value">Arabic Metro AI, rPPG Research</tspan>
-<tspan x="390" y="290" class="cc">. </tspan><tspan class="key">Current</tspan>.<tspan class="key">Focus</tspan>:<tspan class="cc"> ........... </tspan><tspan class="value">Vision 2030, Neural Architecture</tspan>
-<tspan x="390" y="310">- Contact</tspan> -——————————————————————————————————————————————-—-
-<tspan x="390" y="330" class="cc">. </tspan><tspan class="key">Location</tspan>:<tspan class="cc"> .......................... </tspan><tspan class="value">Riyadh, Saudi Arabia</tspan>
-<tspan x="390" y="350" class="cc">. </tspan><tspan class="key">LinkedIn</tspan>:<tspan class="cc"> ......................... </tspan><tspan class="value">raneem-althaqafi</tspan>
-<tspan x="390" y="370" class="cc">. </tspan><tspan class="key">GitHub</tspan>:<tspan class="cc"> ........................... </tspan><tspan class="value">RaneemQasim5251</tspan>
-<tspan x="390" y="390" class="cc">. </tspan><tspan class="key">Email</tspan>:<tspan class="cc"> .......................... </tspan><tspan class="value">raneem.althaqafi@gmail.com</tspan>
-<tspan x="390" y="410" class="cc">. </tspan><tspan class="key">Specialization</tspan>:<tspan class="cc"> .................. </tspan><tspan class="value">AI, ML, Computer Vision</tspan>
-<tspan x="390" y="430">- Achievements</tspan> -————————————————————————————————————————————-—-
-<tspan x="390" y="450" class="cc">. </tspan><tspan class="key">World Champion</tspan>:<tspan class="cc"> .............. </tspan><tspan class="value">Space Debris Detection (1st/495)</tspan>
-<tspan x="390" y="470" class="cc">. </tspan><tspan class="key">AI Innovation</tspan>:<tspan class="cc"> ................ </tspan><tspan class="value">Arabic Metro AI (Siraj Project)</tspan>
-<tspan x="390" y="490" class="cc">. </tspan><tspan class="key">Research</tspan>:<tspan class="cc"> ................... </tspan><tspan class="value">rPPG Heartbeat Detection (94%)</tspan>
-<tspan x="390" y="510" class="cc">. </tspan><tspan class="key">Impact</tspan>:<tspan class="cc"> ..................... </tspan><tspan class="value">Millions of users, Vision 2030</tspan>
+
+<text x="520" y="60" fill="#c9d1d9" font-family="monospace" font-size="16">
+<tspan x="520" y="60" fill="#ffd700">raneem@althaqafi</tspan><tspan fill="#8b949e"> ~$ whoami</tspan>
+<tspan x="520" y="85" fill="#8b949e">└─╼ </tspan><tspan fill="#ffd700">name:</tspan><tspan fill="#7dd3fc"> Raneem Althaqafi</tspan>
+<tspan x="520" y="105" fill="#8b949e">└─╼ </tspan><tspan fill="#ffd700">role:</tspan><tspan fill="#7dd3fc"> AI Engineer &amp; Researcher</tspan>
+<tspan x="520" y="125" fill="#8b949e">└─╼ </tspan><tspan fill="#ffd700">age:</tspan><tspan fill="#7dd3fc"> 24 years, 3 months, 19 days</tspan>
+<tspan x="520" y="145" fill="#8b949e">└─╼ </tspan><tspan fill="#ffd700">location:</tspan><tspan fill="#7dd3fc"> Riyadh, Saudi Arabia</tspan>
+
+<tspan x="520" y="175" fill="#ffd700">raneem@althaqafi</tspan><tspan fill="#8b949e"> ~$ cat achievements.txt</tspan>
+<tspan x="520" y="195" fill="#8b949e">└─╼ </tspan><tspan fill="#3fb950">🏆 World Champion:</tspan><tspan fill="#7dd3fc"> Space Debris (1st/495)</tspan>
+<tspan x="520" y="215" fill="#8b949e">└─╼ </tspan><tspan fill="#3fb950">🤖 AI Innovation:</tspan><tspan fill="#7dd3fc"> Arabic Metro AI (Siraj)</tspan>
+<tspan x="520" y="235" fill="#8b949e">└─╼ </tspan><tspan fill="#3fb950">💓 Research:</tspan><tspan fill="#7dd3fc"> rPPG Heartbeat (94%)</tspan>
+<tspan x="520" y="255" fill="#8b949e">└─╼ </tspan><tspan fill="#3fb950">🇸🇦 Impact:</tspan><tspan fill="#7dd3fc"> Vision 2030 Contributor</tspan>
+
+<tspan x="520" y="285" fill="#ffd700">raneem@althaqafi</tspan><tspan fill="#8b949e"> ~$ git status</tspan>
+<tspan x="520" y="305" fill="#8b949e">└─╼ </tspan><tspan fill="#ffd700">repos:</tspan><tspan fill="#7dd3fc"> 0</tspan><tspan fill="#8b949e"> │ </tspan><tspan fill="#ffd700">stars:</tspan><tspan fill="#7dd3fc"> 0</tspan>
+<tspan x="520" y="325" fill="#8b949e">└─╼ </tspan><tspan fill="#ffd700">commits:</tspan><tspan fill="#7dd3fc"> 0</tspan><tspan fill="#8b949e"> │ </tspan><tspan fill="#ffd700">followers:</tspan><tspan fill="#7dd3fc"> 0</tspan>
+
+<tspan x="520" y="355" fill="#ffd700">raneem@althaqafi</tspan><tspan fill="#8b949e"> ~$ echo "Building AI future"</tspan>
+<tspan x="520" y="375" fill="#8b949e">└─╼ </tspan><tspan fill="#7dd3fc">"One neural network at a time" ✨</tspan>
+
+<tspan x="520" y="405" fill="#ffd700">raneem@althaqafi</tspan><tspan fill="#8b949e"> ~$ system_status</tspan>
+<tspan x="520" y="425" fill="#8b949e">└─╼ </tspan><tspan fill="#00ff00">MATRIX_MODE: ACTIVATED</tspan>
+<tspan x="520" y="445" fill="#8b949e">└─╼ </tspan><tspan fill="#00ff00">NEURAL_NETWORK: ONLINE</tspan>
+<tspan x="520" y="465" fill="#8b949e">└─╼ </tspan><tspan fill="#00ff00">AI_CORE: READY</tspan>
+
+<tspan x="520" y="485" fill="#ffd700">raneem@althaqafi</tspan><tspan fill="#8b949e"> ~$ </tspan><tspan fill="#3fb950">█</tspan>
 </text>
-</svg> 
+</svg>
