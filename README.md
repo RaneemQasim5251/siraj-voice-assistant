@@ -438,11 +438,12 @@ Special thanks to our amazing contributors who have helped build and improve Sir
 
 <div align="center">
 
-| Contributor | GitHub Profile | Role |
-|-------------|---------------|------|
+| Contributor | GitHub Profile |
+|-------------|---------------|
 | **Razanfah** | [@Razanfah](https://github.com/Razanfah) 
 | **GTawhari** | [@GTawhari](https://github.com/GTawhari) 
 | **Norahmw21** | [@Norahmw21](https://github.com/Norahmw21) 
+| **RaneemQasim5251** | [@RaneemQasim5251](https://github.com/RaneemQasim5251)
 
 </div>
 
