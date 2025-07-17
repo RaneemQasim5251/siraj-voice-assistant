@@ -160,7 +160,6 @@ python3 test_api.py
 🎤 "كيف أصل إلى محطة الملك عبدالله؟" - Navigation
 🎤 "أين أقرب مطعم؟" - Restaurant search
 🎤 "ما هي ساعات عمل المترو؟" - Metro information
-🎤 "أنشئ لي سيرة ذاتية" - CV generation
 🎤 "وضع صامت" - Silent mode
 ```
 
@@ -171,7 +170,6 @@ python3 test_api.py
 🎤 "How do I get to King Abdullah Station?" - Navigation
 🎤 "Where is the nearest restaurant?" - Restaurant search
 🎤 "What are the metro operating hours?" - Metro information
-🎤 "Create a CV for me" - CV generation
 🎤 "Silent mode" - Silent mode
 ```
 
