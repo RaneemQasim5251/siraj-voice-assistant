@@ -31,7 +31,6 @@
 
 ### 🔧 Additional Features
 - **RAG System** for comprehensive knowledge base
-- **CV/Resume Generation** with multiple templates
 - **GitHub Profile Integration** for developers
 - **Multi-language Support** (Arabic, English, Urdu, Chinese)
 - **Database Integration** for restaurants and stations
@@ -271,11 +270,6 @@ siraj-voice-assistant/
 │
 ├── models/              # AI models and weights
 │   └── yolov8n.pt      # YOLO face detection model
-│
-├── cv_generators/       # CV/Resume generation scripts
-│   ├── ai_engineer_cv.py
-│   ├── professional_ai_cv.py
-│   └── mozn_specific_cv.py
 │
 ├── raspberry_pi/        # Raspberry Pi specific files
 │   ├── pi_siraj_optimized.py
