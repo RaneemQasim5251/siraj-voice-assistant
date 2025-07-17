@@ -1,5 +1,7 @@
 # 🎙️ Siraj Voice Assistant - المساعد الصوتي سراج
 
+![WhatsApp Image 2025-06-20 at 01 41 45_ab8de39c](https://github.com/user-attachments/assets/ab676baa-c2b0-4017-9c05-ac5ba1afc1a8)
+
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Python](https://img.shields.io/badge/python-3.8%2B-blue.svg)
 ![Arabic](https://img.shields.io/badge/language-Arabic%20%7C%20English-green.svg)
@@ -475,5 +477,5 @@ Special thanks to our amazing contributors who have helped build and improve Sir
 [⭐ Star this repo](https://github.com/your-username/siraj-voice-assistant) | [🐛 Report Bug](https://github.com/your-username/siraj-voice-assistant/issues) | [✨ Request Feature](https://github.com/your-username/siraj-voice-assistant/issues)
 
 </div>
-=======
+
 
