@@ -440,10 +440,10 @@ Special thanks to our amazing contributors who have helped build and improve Sir
 
 | Contributor | GitHub Profile |
 |-------------|---------------|
-| **Razanfah** | [@Razanfah](https://github.com/Razanfah) 
-| **GTawhari** | [@GTawhari](https://github.com/GTawhari) 
-| **Norahmw21** | [@Norahmw21](https://github.com/Norahmw21) 
-| **RaneemQasim5251** | [@RaneemQasim5251](https://github.com/RaneemQasim5251)
+| **Razan** | [@Razanfah](https://github.com/Razanfah) 
+| **Ghadah** | [@GTawhari](https://github.com/GTawhari) 
+| **Norah** | [@Norahmw21](https://github.com/Norahmw21) 
+| **Raneem** | [@RaneemQasim5251](https://github.com/RaneemQasim5251)
 
 </div>
 
