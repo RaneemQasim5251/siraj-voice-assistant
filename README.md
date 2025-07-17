@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # 🎙️ Siraj Voice Assistant - المساعد الصوتي سراج
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
@@ -484,6 +483,4 @@ Special thanks to our amazing contributors who have helped build and improve Sir
 
 </div>
 =======
-
->>>>>>> 50e5ec95ad4668c5353eb87aed3a666005274a3f
 
